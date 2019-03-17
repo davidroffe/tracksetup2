@@ -1,0 +1,1400 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+  color: #767676;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Bootstrap/Angular-UI*/
+* {
+  box-sizing: inherit;
+}
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a,
+a {
+  cursor: pointer;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-dialog {
+  margin: 100px auto 0;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+  background-color: #fff;
+}
+
+h3 {
+  color: #767676;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: geo_sans_light;
+  src: url(./assets/fonts/GeosansLight.ttf);
+}
+
+::selection {
+  background: #ef9676;
+  color: #fff;
+}
+
+.error {
+  color: red !important;
+}
+
+#home {
+  background: url(./assets/img/datsun_engine1.jpg) no-repeat 45% 0 / cover;
+  height: 100%;
+  min-height: 765px;
+  min-width: 540px;
+  overflow: hidden;
+}
+
+#home-center {
+  width: 540px;
+  margin: 200px auto 0;
+}
+
+#home-center > h1 {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: geo_sans_light;
+  font-size: 70px;
+  text-align: center;
+  color: #fff;
+  margin: 10px auto;
+}
+
+#home-center > h2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: geo_sans_light;
+  font-size: 45px;
+  text-align: center;
+  color: #fff;
+  margin: 10px auto;
+}
+
+#home-center > #data-h {
+  width: 225px;
+}
+
+#center-box {
+  width: 520px;
+  margin: 50px auto 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px 0;
+  border-bottom: 20px solid #e96333;
+}
+
+#center-box > form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#center-box input[type="text"],
+#center-box input[type="password"] {
+  padding: 14px;
+  width: 300px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #fff;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 14px;
+  background: none;
+}
+
+#center-box input[type="text"]:focus,
+#center-box input[type="password"]:focus {
+  border-bottom: 1px solid #e96333;
+  outline: 0;
+}
+
+#centerbox ::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#centerbox ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ffffff;
+  opacity: 1;
+}
+
+#centerbox ::-ms-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#center-box button,
+#center-box input[type="submit"] {
+  border: 2px solid #fff;
+  padding: 0px 14px;
+  width: 326px;
+  height: 50px;
+  background: none;
+  color: #fff;
+  margin: 40px auto 0;
+  font-family: "Raleway";
+  font-size: 16px;
+  display: block;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+#center-box button:hover,
+#center-box input[type="submit"]:hover {
+  background: #fff;
+  color: #333;
+}
+
+#center-box button:focus,
+#center-box input[type="submit"]:focus {
+  outline: 0;
+}
+
+#center-box form p {
+  color: #fff;
+  margin-top: 25px;
+  text-align: center;
+}
+
+#center-box form p.error {
+  margin-bottom: -15px;
+}
+
+#center-box > form p a {
+  color: #e96333;
+}
+
+#center-box > form p a:hover {
+  text-decoration: underline;
+}
+
+.modal-back {
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#signup-modal {
+  z-index: 2001;
+  position: relative;
+  top: 215px;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.modal-open {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#top-nav {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  padding: 0 30px;
+  height: 93px;
+}
+
+#top-nav-left {
+  float: left;
+}
+
+#top-nav-left .logo > i {
+  font-size: 50px;
+  margin-left: 20px;
+}
+
+#top-nav-left .logo > div {
+  display: inline-block;
+  width: 100px;
+  font-weight: 600;
+  vertical-align: top;
+  margin: 18px 0 0 10px;
+  font-family: geo_sans_light;
+  font-size: 30px;
+}
+
+#top-nav-right {
+  float: right;
+  font-size: 30px;
+  padding: 30px 0;
+}
+
+#top-user-menu {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: #fff;
+  padding: 5px 80px 5px 20px;
+}
+
+#top-user-menu > li {
+  margin: 10px 0;
+}
+
+#top-user-menu i {
+  display: inline;
+  margin-right: 5px;
+}
+
+#content {
+}
+
+#background {
+  position: absolute;
+  top: 444px;
+  left: 0;
+  min-height: 440px;
+  height: 50%;
+  width: 100%;
+  background: #fff;
+  background-size: cover;
+}
+
+#cars-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+
+#cars-view > ul {
+  margin: 113px 20px 0;
+}
+
+#cars-view li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.indi-card {
+  display: block;
+  height: 200px;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.modify-card {
+  padding: 30px 0;
+}
+
+.split-card {
+  cursor: pointer;
+  display: block;
+  width: 250px;
+  padding: 15px 0;
+  font-size: 30px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.split-card > i {
+  margin-left: 15px;
+}
+
+.create-card {
+  background: #ff8241;
+}
+
+.delete-card {
+  background: #ffcb00;
+}
+
+.live-card > img {
+  display: block;
+  margin: -50px auto 0;
+}
+
+.live-card > p {
+  position: relative;
+  margin-top: -55px;
+  text-align: center;
+  padding: 15px;
+  background: #ccc;
+  color: #fff;
+  font-size: 25px;
+  transition: background 0.5s ease;
+}
+
+.live-card:hover > p {
+  background: #ff8241;
+}
+
+/*Detailed Car View*/
+.side-tab {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  left: -52px;
+  background: #fff;
+  border-right-width: 0;
+  padding: 15px 10px 15px 10px;
+  font-size: 20px;
+  transition: left 0.5s ease;
+}
+
+.side-tab.car {
+  left: -62px;
+}
+
+.side-tab.back {
+  top: 120px;
+}
+
+.side-tab.card-edit {
+  top: 200px;
+}
+
+.side-tab:hover {
+  left: -5px;
+  transition: left 0.5s ease;
+}
+
+.side-tab.back > i {
+  margin: 0 10px 0 20px;
+  vertical-align: middle;
+}
+
+.side-tab.card-edit > i {
+  margin: 0 6px 0 20px;
+  vertical-align: middle;
+}
+
+.container {
+  width: 1230px;
+  margin: 0 auto;
+}
+
+.car.title {
+  padding: 36px 0;
+  background-color: #f4f4f4;
+}
+
+.car.title > div {
+  margin: 0 auto;
+  width: 160px;
+}
+
+.car.title > div > img {
+  width: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.car.title > h1 {
+  margin: auto;
+  color: #767676;
+  font-size: 30px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.car.title > div > i {
+  opacity: 0;
+  color: #767676;
+  vertical-align: top;
+  float: right;
+  margin-top: -160px;
+  margin-right: -25px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color, 0.3s ease;
+}
+
+.car.title > div > i:hover {
+  color: #000;
+}
+
+.car.title > div:hover > i {
+  opacity: 1;
+}
+
+div.cards.notes.container {
+  background: #fff;
+}
+
+#car-cards {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  display: inline-block;
+  width: 800px;
+  float: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04),
+    6px 8px 15px rgba(0, 0, 0, 0.04);
+}
+
+#cards-title {
+  overflow: hidden;
+}
+
+#add-card {
+  float: right;
+  height: 60px;
+}
+
+#cards-title h1,
+#notes-title h1 {
+  width: 100%;
+  margin-left: -85px;
+  font-size: 30px;
+  text-align: center;
+  color: #767676;
+}
+
+#cards-title h1.empty,
+#notes-title h1.empty {
+  margin-left: 0;
+}
+
+#del-card,
+#del-note {
+  height: 23px;
+  float: left;
+  width: 86px;
+}
+
+#del-card > a {
+  display: block;
+  float: left;
+  background: white;
+  margin-top: 5px;
+  padding-top: 2px;
+  width: 17px;
+  height: 16px;
+  overflow: hidden;
+  color: #767676;
+  transition: width 0.2s ease 0.1s;
+}
+
+#del-card > a > i {
+  float: right;
+  margin-top: 2px;
+}
+
+.del-opt {
+  padding-top: 5px;
+  font-size: 14px;
+  color: #767676;
+  cursor: pointer;
+}
+
+.del-opt > i.fa-undo {
+  margin-left: 12px;
+}
+
+.del-opt > i.fa-arrow-circle-o-left {
+  margin-left: 5px;
+}
+
+.del-but {
+  margin-right: 5px;
+  color: #767676;
+  cursor: pointer;
+}
+
+#add-card > a {
+  display: block;
+  float: right;
+  background: white;
+  margin: 5px 0 20px;
+  padding-top: 2px;
+  width: 17px;
+  height: 16px;
+  overflow: hidden;
+  color: #767676;
+  transition: width 0.2s ease 0.1s;
+}
+
+#add-card > a > span,
+#del-card > a > span {
+  opacity: 0;
+  font-size: 14px;
+  transition: opacity 0.17s ease;
+}
+
+#add-card > a:hover {
+  width: 55px;
+  transition: width 0.25s ease;
+}
+
+#add-card > a:hover > span,
+#del-card > a:hover > span {
+  opacity: 1;
+  transition: opacity 0.5s ease 0.2s;
+}
+
+#del-card > a.keep-open,
+#del-note > a.keep-open {
+  width: 65px;
+}
+
+#del-card > a > span.keep-open,
+#del-note > a > span.keep-open {
+  opacity: 1;
+}
+
+.card-sel {
+  display: block;
+  padding: 20px 25px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #ccc;
+  transition: border-bottom 0.5s ease;
+}
+
+.card-sel:hover {
+  border-bottom: 5px solid #ff8241;
+}
+
+.card-sel.del {
+  display: inline-block;
+  padding: 20px 15px;
+}
+
+.card-sel > p {
+  display: inline-block;
+  font-size: 22px;
+  width: 230px;
+}
+
+.check-sel {
+  display: none;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 32px;
+  width: 25px;
+  vertical-align: middle;
+  color: #ccc;
+}
+
+.check-sel:hover {
+  color: #767676;
+}
+
+.check-sel.fa-check-square-o {
+  color: #767676;
+}
+.check-sel.del {
+  display: inline-block;
+}
+
+.check-sel.set {
+  color: #ff3a00;
+}
+
+#car-notes {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  display: block;
+  padding: 15px;
+  width: 300px;
+  background: #fff;
+  float: left;
+  margin-left: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04),
+    6px 8px 15px rgba(0, 0, 0, 0.04);
+}
+
+#notes-title {
+  overflow: hidden;
+  height: 60px;
+}
+
+#add-note {
+  float: right;
+  height: 60px;
+}
+
+#del-note > a {
+  display: block;
+  float: left;
+  background: white;
+  margin-top: 5px;
+  padding-top: 2px;
+  width: 17px;
+  height: 16px;
+  overflow: hidden;
+  color: #767676;
+  transition: width 0.2s ease 0.1s;
+}
+
+#del-note > a > i {
+  float: right;
+  margin-top: 2px;
+}
+
+#add-note > a {
+  display: block;
+  float: right;
+  background: white;
+  margin: 5px 0 20px;
+  padding-top: 2px;
+  width: 17px;
+  height: 16px;
+  overflow: hidden;
+  color: #767676;
+  transition: width 0.2s ease 0.1s;
+}
+
+#add-note > a > span,
+#del-note > a > span {
+  opacity: 0;
+  font-size: 14px;
+  transition: opacity 0.17s ease;
+}
+
+#add-note > a:hover,
+#add-card > a:hover {
+  width: 55px;
+  transition: width 0.25s ease;
+}
+
+#del-note > a:hover,
+#del-card > a:hover {
+  width: 65px;
+  transition: width 0.25s ease;
+}
+
+#add-note > a:hover > span,
+#del-note > a:hover > span {
+  opacity: 1;
+  transition: opacity 0.5s ease 0.2s;
+}
+
+#add-note-modal {
+  position: relative;
+  margin: 200px auto 0;
+  z-index: 1000;
+}
+
+.note-sel {
+  display: block;
+  padding: 20px 20px;
+  margin-bottom: 10px;
+  border-bottom: 5px solid #ccc;
+  transition: border-bottom 0.5s ease;
+}
+
+.note-sel.del {
+  display: inline-block;
+  width: 210px;
+  padding: 20px 15px;
+}
+
+.note-sel:hover {
+  border-bottom: 5px solid #ff8241;
+}
+
+.note-sel > p {
+  text-align: center;
+  font-size: 22px;
+}
+
+p.col-1 {
+}
+
+p.col-2 {
+  text-align: center;
+}
+
+p.col-3 {
+  float: right;
+  text-align: right;
+}
+
+/*Individual Card View*/
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.bg > .container {
+  margin-top: 93px;
+}
+
+table.card {
+  margin: 35px auto;
+}
+
+th,
+td {
+  text-align: right;
+  width: 350px;
+  font-size: 22px;
+  color: #767676;
+  padding: 10px 10px 10px 0;
+  background-color: rgba(246, 246, 246, 0.8);
+}
+
+.lft-al {
+  text-align: left;
+}
+
+thead {
+  border-bottom: 1px solid #808080;
+}
+
+thead > tr {
+  border-bottom: none;
+}
+
+tr {
+  border-bottom: 1px solid #cccccc;
+}
+
+.sec {
+  background: #e8e8e8;
+}
+
+.ctg-1 > i,
+.ctg-1 {
+  margin: 0 10px 0 0;
+}
+
+.ctg-2 > i,
+.ctg-2 {
+  margin: 0 10px 0 25px;
+}
+
+.ctg-3 > i,
+.ctg-3 {
+  margin: 0 10px 0 50px;
+}
+
+/*
+Form styles for adding cars/cards/notes
+*/
+
+button.cancel {
+  background: #ffcb00;
+}
+
+.add ::-webkit-input-placeholder {
+  padding-top: 3px;
+  font-size: 14px;
+}
+
+.add ::-moz-placeholder {
+  /* Firefox 19+ */
+  padding-top: 3px;
+  font-size: 14px;
+}
+
+.add ::-ms-input-placeholder {
+  padding-top: 3px;
+  font-size: 14px;
+}
+
+.add.cards > .form-container,
+.add.cars > .form-container,
+.add.notes > .form-container {
+  width: 550px;
+  padding: 20px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.add h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #a8a8a8;
+}
+
+.add form {
+  overflow: hidden;
+}
+
+.add .form-container {
+  overflow: hidden;
+}
+
+.add .form-container div {
+  padding: 10px 0;
+}
+
+.add label,
+#settings label {
+  display: block;
+  margin: 18px 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+}
+
+.add p {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+}
+
+.add.cars p > i {
+  color: #ccc;
+  float: right;
+}
+
+.add.cars p > i:hover {
+  color: #666;
+  cursor: pointer;
+}
+
+.add.cars .form-container > div > div:hover {
+  background: #f7f7f7;
+}
+
+.add input[type="text"],
+.add textarea,
+#settings input[type="text"],
+#settings input[type="password"] {
+  padding: 10px 0 10px 10px;
+  margin-left: 1px;
+  border: 1px solid #e5e5e5;
+  color: #808080;
+  outline-color: #e96333;
+}
+
+button {
+  float: right;
+  padding: 14px;
+  width: 125px;
+  border: none;
+  background: #ff8241;
+  color: #fff;
+  font-weight: 800;
+  font-family: "Raleway";
+  font-size: 13px;
+  margin: 20px 5px 12px;
+}
+
+.add button.upload {
+  float: none;
+  margin: 10px 0 0;
+  background: #ff3a00;
+}
+
+#car-avatar-upload {
+  display: none;
+}
+
+.preview-avatar {
+  display: block;
+  width: 120px;
+}
+
+.add select {
+  padding: 10px;
+  margin-left: 1px;
+  border: 1px solid #e5e5e5;
+  color: #808080;
+  background: #fff;
+}
+
+.add select:focus {
+  outline-color: #e96333;
+}
+
+label.radio {
+  display: inline-block;
+  margin: 0;
+}
+
+.toggle-hide {
+  display: none;
+}
+
+/*Add new car page*/
+
+.add.cars input[type="text"] {
+  padding: 10px 0 10px 10px;
+  margin-left: 1px;
+  width: 97%;
+  border: 1px solid #e5e5e5;
+  color: #808080;
+}
+
+.add.cars input[type="text"]:focus {
+  outline-color: #e96333;
+}
+
+.add.cars select {
+  width: 200px;
+}
+
+/*Add new card page*/
+
+.add.cards input[type="text"] {
+  padding: 10px 0 10px 10px;
+  margin-left: 1px;
+  width: 110px;
+  border: 1px solid #e5e5e5;
+  color: #808080;
+}
+
+.add.cards input[type="text"].single {
+  width: 150px;
+}
+
+.add.cars input[type="text"]:focus {
+  outline-color: #e96333;
+}
+
+.add.cards label > span:hover {
+  cursor: pointer;
+}
+
+.add.cards label > span > i.fa {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.add.cards label > span:hover > i {
+  color: #e96333;
+}
+
+i.add.cards.expand {
+  margin-right: 10px;
+}
+
+p.add.cards.expand {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/*Add new notes Modal*/
+.add.notes input[type="text"] {
+  width: 425px;
+}
+
+.add textarea {
+  width: 525px;
+  max-width: 525px;
+  height: 200px;
+  max-height: 200px;
+}
+
+/*Note View Modal*/
+.note {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.note.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #a8a8a8;
+}
+
+.note.body {
+  font-size: 20px;
+  color: #666;
+  background-color: #fff;
+}
+
+/*Settings View*/
+.title {
+  min-width: 1260px;
+}
+
+.settings.title {
+  padding: 36px 0;
+  background-color: #f4f4f4;
+}
+
+.settings.title > h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.settings.title > h1 > i {
+  margin-right: 10px;
+}
+
+#settings {
+  width: 440px;
+  margin: -20px auto 20px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04),
+    6px 8px 15px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+#settings > div {
+  overflow: hidden;
+}
+
+#settings input[type="text"],
+#settings input[type="password"] {
+  width: 425px;
+}
+
+.settings-message {
+  float: left;
+  color: #ff8241;
+  opacity: 0;
+  margin-top: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.settings-message.show {
+  opacity: 1;
+}
+
+#settings p.delete {
+  color: red;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+div.delete p {
+  margin-top: 15px;
+  color: red;
+  font-weight: 600;
+}
+
+#settings label.delete {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 100px;
+}
+
+div.delete > button.button {
+  background: red;
+}
+
+#settings .delete.error {
+  font-weight: 800;
+}
+
+@media (max-width: 500px) {
+  /*Login screen*/
+  #home {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 685px;
+  }
+
+  #home-center {
+    margin-top: 100px;
+    width: 100%;
+  }
+
+  #home-center > h1 {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+
+  #center-box {
+    width: 100%;
+  }
+
+  #center-box > form {
+    width: 100%;
+  }
+
+  #center-box button,
+  #center-box input[type="submit"] {
+    padding: 0;
+    width: 80%;
+  }
+
+  #center-box input[type="text"],
+  #center-box input[type="password"] {
+    width: 80%;
+  }
+
+  /*Car List View*/
+  #cars-view li {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .live-card > p {
+    background: #ff8241;
+  }
+
+  /*Detailed Car View*/
+  .side-tab {
+    transition: none;
+  }
+  .side-tab:hover {
+    left: -52px;
+    transition: none;
+  }
+
+  .side-tab.car:hover {
+    left: -62px;
+  }
+  .title {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+    min-width: 0;
+  }
+
+  #car-cards {
+    width: 85%;
+    margin: -20px auto 0;
+    display: block;
+    float: none;
+  }
+
+  p.col-1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #car-notes {
+    display: block;
+    float: none;
+    margin: 20px auto;
+    width: 85%;
+    box-shadow: 0 -15px 20px rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.04),
+      -6px 8px 15px rgba(0, 0, 0, 0.04), 6px 8px 15px rgba(0, 0, 0, 0.04);
+  }
+
+  p.col-2,
+  p.col-3 {
+    display: none;
+  }
+
+  .del p.col-1,
+  .note-sel.del {
+    width: 190px;
+  }
+
+  /*Modals*/
+  .modal-dialog {
+    margin: 0;
+  }
+
+  .add.cars input[type="text"] {
+    width: 95%;
+  }
+
+  .add.cards > .form-container,
+  .add.cars > .form-container,
+  .add.notes > .form-container {
+    width: 85%;
+  }
+
+  .add.notes input[type="text"] {
+    width: 95%;
+  }
+
+  .add textarea {
+    width: 95%;
+    height: 200px;
+    max-width: 95%;
+    max-height: 200px;
+  }
+
+  button {
+    width: 95px;
+  }
+
+  button.cancel {
+    float: left;
+  }
+
+  /*Card View*/
+
+  table.card {
+    margin-top: 130px;
+  }
+
+  th,
+  td {
+    font-size: 15px;
+  }
+
+  /*Account Settings View*/
+  #settings {
+    width: 86%;
+  }
+
+  #settings input[type="text"],
+  #settings input[type="password"] {
+    width: 94%;
+  }
+
+  #settings label.delete {
+    margin-right: 0;
+  }
+}
