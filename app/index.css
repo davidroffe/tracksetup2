@@ -276,7 +276,6 @@ table {
   opacity: 1;
 }
 
-#center-box button,
 #center-box input[type="submit"] {
   border: 2px solid #fff;
   padding: 0px 14px;
@@ -291,15 +290,31 @@ table {
   transition: background 0.5s ease, color 0.5s ease;
 }
 
-#center-box button:hover,
 #center-box input[type="submit"]:hover {
   background: #fff;
   color: #333;
 }
 
-#center-box button:focus,
 #center-box input[type="submit"]:focus {
   outline: 0;
+}
+
+#center-box button.switch-form {
+  background: none;
+  border: none;
+  color: #e96333;
+  float: none;
+  padding: 0;
+  width: auto;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+}
+
+#center-box button.switch-form:hover {
+  text-decoration: underline;
 }
 
 #center-box form p {

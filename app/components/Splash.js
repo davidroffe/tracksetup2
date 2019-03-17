@@ -71,7 +71,9 @@ class Splash extends React.Component {
         });
     }
   }
-  handleSwitchForm() {
+  handleSwitchForm(e) {
+    e.preventDefault();
+
     let form = this.state.form === "login" ? "signUp" : "login";
 
     this.setState({
@@ -123,15 +125,12 @@ class Splash extends React.Component {
                 type="submit"
                 value={this.state.form === "login" ? "LOGIN" : "SIGN UP"}
               />
-              {this.state.form === "login" ? (
-                <p>
-                  Don‘t have an account? <button>Sign Up</button>
-                </p>
-              ) : (
-                <p>
-                  Already have an account? <button>Sign In</button>
-                </p>
-              )}
+              <p>
+                Don‘t have an account?{" "}
+                <button className="switch-form" onClick={this.handleSwitchForm}>
+                  {this.state.form === "login" ? "Sign Up" : "Login"}
+                </button>
+              </p>
             </form>
           </div>
         </div>
