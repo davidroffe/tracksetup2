@@ -33,6 +33,7 @@ class Splash extends React.Component {
     let email = this.state.email;
     let password = this.state.password;
     let passwordConfirm = this.state.passwordConfirm;
+    let splashClass = this;
     const url = form === "login" ? "/api/login" : "/api/signup";
 
     if (email === undefined || email === "") {
@@ -59,15 +60,11 @@ class Splash extends React.Component {
           email: email,
           password: password
         })
-        .then(function(response) {
-          this.props.history("/panel/cars");
+        .then(response => {
+          splashClass.props.history("/panel/cars");
         })
-        .catch(function(error) {
+        .catch(error => {
           errorMessage = [error.message];
-
-          this.setState({
-            errorMessage
-          });
         });
     }
   }
