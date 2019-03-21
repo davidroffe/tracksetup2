@@ -48,7 +48,7 @@ class Panel extends React.Component {
         <div id="top-nav">
           <div id="top-nav-left">
             <Link to="/panel" className="logo">
-              <img src="assets/img/tire-logo.png" alt="" />
+              <img src="/assets/img/tire-logo.png" alt="Tire logo" />
               <div>Track Setup</div>
             </Link>
           </div>

@@ -61,7 +61,7 @@ class Splash extends React.Component {
           password: password
         })
         .then(response => {
-          splashClass.props.history("/panel/cars");
+          splashClass.props.history.push("/panel/cars");
         })
         .catch(error => {
           errorMessage = [error.message];

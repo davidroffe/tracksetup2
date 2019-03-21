@@ -25,7 +25,7 @@ app.use(logger("dev"));
 app.use(busboy());
 
 app.all("/*", function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "preview.track-setup.com");
+  res.header("Access-Control-Allow-Origin", "tracksetup.com");
   res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,OPTIONS");
   res.header(
     "Access-Control-Allow-Headers",
