@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import AddCar from "./AddCar";
 
 class CarList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      show: false,
       cars: []
     };
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
   componentDidMount() {
     axios.get("/api/car/getmulti").then(response => {
@@ -16,6 +21,13 @@ class CarList extends React.Component {
         cars: response.data
       });
     });
+  }
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
   }
   render() {
     return (
@@ -33,16 +45,20 @@ class CarList extends React.Component {
             </li>;
           })}
           <li className="modify-card">
-            <div className="split-card create-card" ng-click="addCarOpen()">
+            <button
+              className="split-card create-card"
+              onClick={this.handleShow}
+            >
               <i className="fa fa-plus" />
               <span>Add a car...</span>
-            </div>
+            </button>
             <div className="split-card delete-card" ng-click="delCarOpen()">
               <i className="fa fa-minus" />
               <span>Delete a car...</span>
             </div>
           </li>
         </ul>
+        <AddCar show={this.state.show} handleClose={this.handleClose} />
       </div>
     );
   }

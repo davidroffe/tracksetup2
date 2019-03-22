@@ -37,9 +37,11 @@ router.delete("/api/user/del", user.deleteAccount);
 
 //Static
 //Every URL pointing to a correct path can retrieve files from public
+router.all("/assets/*", express.static(__dirname + "../../../app"));
+
 router.all("/*", express.static(__dirname + "../../../dist"));
 
-//Anything that doesn't exist in public with pull the angular index and run the app
+//Anything that doesn't exist in public with pull the react index and run the app
 router.all("/*", function(req, res) {
   res.sendFile("dist/index.html", { root: __dirname + "../../../" });
 });

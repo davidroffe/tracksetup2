@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
 
@@ -75,7 +75,9 @@ class Panel extends React.Component {
           </div>
         </div>
         <div id="content">
-          <CarList />
+          <Router>
+            <Route path="/panel/cars" component={CarList} />
+          </Router>
         </div>
       </div>
     );

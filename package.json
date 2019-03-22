@@ -15,9 +15,11 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
     "bcrypt-nodejs": "latest",
     "body-parser": "^1.8.3",
+    "bootstrap": "^4.3.1",
     "connect-busboy": "latest",
     "cookie-parser": "latest",
     "express": "^4.16.4",
@@ -27,6 +29,7 @@
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1",
     "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1"
   },
