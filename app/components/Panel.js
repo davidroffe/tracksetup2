@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
+import MainMenu from "./MainMenu";
 
 class Panel extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Panel extends React.Component {
 
     this.state = {
       user: {},
-      menuVisible: false
+      showMainMenu: false
     };
   }
   componentDidMount() {
@@ -22,13 +23,13 @@ class Panel extends React.Component {
     //     alert(error.message);
     //   });
   }
-  userMenuVisible(event) {
-    event.stopPropagation();
+  toggle(name, event) {
+    const newValue = !this.state[name];
+    let newState = {};
 
-    var menuVisible = !this.state.menuVisible;
-    this.setState({
-      menuVisible
-    });
+    newState[name] = newValue;
+
+    this.setState(newState);
   }
   logOut() {
     axios
@@ -52,31 +53,15 @@ class Panel extends React.Component {
               <div>Track Setup</div>
             </Link>
           </div>
-          <div id="top-nav-right">
-            <button onClick={this.userMenuVisible}>
-              <i className="fa fa-bars fa-lg" />
-            </button>
-            {this.state.clicked && (
-              <ul id="top-user-menu">
-                <li>
-                  <a onClick={this.state.toggleSettings}>
-                    <i className="fa fa-cog" />
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a ng-href="" onClick={this.state.logOut}>
-                    <i className="fa fa-power-off" />
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            )}
-          </div>
+          <MainMenu
+            show={this.state.showMainMenu}
+            toggle={this.toggle.bind(this, "showMainMenu")}
+          />
         </div>
         <div id="content">
           <Router>
             <Route path="/panel/cars" component={CarList} />
+            <Route component={CarList} />
           </Router>
         </div>
       </div>
