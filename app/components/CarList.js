@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AddCar from "./AddCar";
+import DeleteCar from "./DeleteCar";
 
 class CarList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      show: false,
+      showAddCar: false,
+      showDeleteCar: false,
       cars: []
     };
 
@@ -16,18 +18,27 @@ class CarList extends React.Component {
     this.handleClose = this.handleClose.bind(this);
   }
   componentDidMount() {
+    this.updateCarList();
+  }
+  updateCarList() {
     axios.get("/api/car/getmulti").then(response => {
       this.setState({
         cars: response.data
       });
     });
   }
-  handleClose() {
-    this.setState({ show: false });
+  handleClose(modal, event) {
+    let object = {};
+
+    object[`show${modal}`] = false;
+    this.setState(object);
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleShow(modal, event) {
+    let object = {};
+
+    object[`show${modal}`] = true;
+    this.setState(object);
   }
   render() {
     return (
@@ -47,18 +58,32 @@ class CarList extends React.Component {
           <li className="modify-card">
             <button
               className="split-card create-card"
-              onClick={this.handleShow}
+              onClick={this.handleShow.bind(this, "AddCar")}
             >
               <i className="fa fa-plus" />
               <span>Add a car...</span>
             </button>
-            <div className="split-card delete-card" ng-click="delCarOpen()">
+            <button
+              className="split-card delete-card"
+              onClick={this.handleShow.bind(this, "DeleteCar")}
+            >
               <i className="fa fa-minus" />
               <span>Delete a car...</span>
-            </div>
+            </button>
           </li>
         </ul>
-        <AddCar show={this.state.show} handleClose={this.handleClose} />
+        <AddCar
+          cars={this.state.cars}
+          show={this.state.showAddCar}
+          handleClose={this.handleClose.bind(this, "AddCar")}
+          updateCarList={this.updateCarList}
+        />
+        <DeleteCar
+          cars={this.state.cars}
+          show={this.state.showDeleteCar}
+          handleClose={this.handleClose.bind(this, "DeleteCar")}
+          updateCarList={this.updateCarList}
+        />
       </div>
     );
   }

@@ -460,6 +460,8 @@ table {
   cursor: pointer;
   display: block;
   width: 250px;
+  margin: 0;
+  float: none;
   padding: 15px 0;
   font-size: 30px;
   color: #fff;
