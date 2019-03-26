@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class MainMenu extends React.Component {
   constructor(props) {
@@ -30,10 +31,10 @@ class MainMenu extends React.Component {
         {this.state.show && (
           <ul id="top-user-menu">
             <li>
-              <button onClick={this.toggleSettings}>
+              <Link to="/panel/settings">
                 <i className="fa fa-cog" />
                 Settings
-              </button>
+              </Link>
             </li>
             <li>
               <button onClick={this.logOut}>

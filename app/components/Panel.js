@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
 import MainMenu from "./MainMenu";
+import Settings from "./Settings";
 
 class Panel extends React.Component {
   constructor(props) {
@@ -61,7 +62,7 @@ class Panel extends React.Component {
         <div id="content">
           <Router>
             <Route path="/panel/cars" component={CarList} />
-            <Route component={CarList} />
+            <Route path="/panel/settings" component={Settings} />
           </Router>
         </div>
       </div>
