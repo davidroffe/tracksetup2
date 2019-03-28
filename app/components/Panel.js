@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
 import MainMenu from "./MainMenu";
@@ -60,10 +65,13 @@ class Panel extends React.Component {
           />
         </div>
         <div id="content">
-          <Router>
-            <Route path="/panel/cars" component={CarList} />
-            <Route path="/panel/settings" component={Settings} />
-          </Router>
+          <Route path="/panel/cars" component={CarList} />
+          <Route path="/panel/settings" component={Settings} />
+          <Route
+            exact
+            path="/panel"
+            render={() => <Redirect to="/panel/cars" />}
+          />
         </div>
       </div>
     );

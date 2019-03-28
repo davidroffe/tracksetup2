@@ -11,14 +11,16 @@ class Settings extends React.Component {
       showEmailMessage: false,
       emailMessage: "",
       password: "",
-      confirmPassword: "",
+      passwordConfirm: "",
       showPasswordMessage: false,
       passwordMessage: "",
       delChk: false,
       delChkClass: ""
     };
 
-    this.handleClose = this.handleClose.bind(this);
+    this.updateEmail = this.updateEmail.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+    this.deleteAccount = this.deleteAccount.bind(this);
   }
   componentDidMount() {
     axios.get("/api/user/getsingle").then(response => {
@@ -26,6 +28,13 @@ class Settings extends React.Component {
         user: response.data
       });
     });
+  }
+  handleChange(fieldName, event) {
+    let newState = {};
+    let newValue = event.target.value;
+
+    newState[fieldName] = newValue;
+    this.setState(newState);
   }
   updateEmail() {
     const newEmail = this.state.email;
@@ -56,11 +65,13 @@ class Settings extends React.Component {
             showEmailMessage: true
           });
         });
+    } else {
+      //Handle case and show indicator
     }
   }
   updatePassword() {
     const newPassword = this.state.password;
-    const passwordConfirm = this.state.user.email;
+    const passwordConfirm = this.state.passwordConfirm;
 
     if (
       newPassword === "" ||
@@ -100,7 +111,7 @@ class Settings extends React.Component {
   deleteAccount() {
     if (this.state.delChk) {
       axios.post("/api/user/del").then(response => {
-        this.logout();
+        this.props.history.push("/");
       });
     } else {
       this.setState({
@@ -121,7 +132,12 @@ class Settings extends React.Component {
           <div id="settings">
             <div>
               <label htmlFor="email">Email</label>
-              <input id="email" type="text" vaule={this.state.email} />
+              <input
+                id="email"
+                type="text"
+                value={this.state.email}
+                onChange={this.handleChange.bind(this, "email")}
+              />
               {this.state.showEmailMessage && <p>{this.state.emailMessage}</p>}
               <button className="button" onClick={this.updateEmail}>
                 Update
@@ -133,12 +149,14 @@ class Settings extends React.Component {
                 id="password"
                 type="password"
                 value={this.state.password}
+                onChange={this.handleChange.bind(this, "password")}
               />
               <label htmlFor="confirm-password">Confirm Password</label>
               <input
                 id="confirm-password"
                 type="password"
-                value={this.state.confirmPassword}
+                value={this.state.passwordConfirm}
+                onChange={this.handleChange.bind(this, "passwordConfirm")}
               />
               {this.state.showPasswordMessage && (
                 <p>{this.state.passwordMessage}</p>
@@ -148,9 +166,14 @@ class Settings extends React.Component {
               </button>
             </div>
             <div className="delete">
-              <label>Delete Account</label>
-              <p>This action is irreversible.</p>
-              <input id="delete" type="checkbox" value={this.state.delChk} />
+              <p className="label">Delete Account</p>
+              <p className="warning">This action is irreversible.</p>
+              <input
+                id="delete"
+                type="checkbox"
+                value={this.state.delChk}
+                onChange={this.handleChange.bind(this, "delChk")}
+              />
               <label htmlFor="delete" className={this.state.delChkClass}>
                 Yes, I want to delete my account.
               </label>
