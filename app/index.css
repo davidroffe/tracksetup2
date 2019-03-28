@@ -189,7 +189,8 @@ table {
   color: #fff;
 }
 
-.error {
+.error,
+.warning {
   color: red !important;
 }
 
@@ -997,7 +998,8 @@ button.cancel {
 }
 
 .add label,
-#settings label {
+#settings label,
+p.label {
   display: block;
   margin: 18px 0 6px;
   font-size: 20px;
@@ -1230,9 +1232,8 @@ p.add.cards.expand {
   font-weight: 600;
 }
 
-div.delete p {
+div.delete p.warning {
   margin-top: 15px;
-  color: red;
   font-weight: 600;
 }
 
