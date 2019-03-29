@@ -98,7 +98,7 @@ var auth = {
         user.save();
         res
           .clearCookie("auth")
-          .res.status(201)
+          .status(201)
           .end();
       } else {
         res.status(401);
