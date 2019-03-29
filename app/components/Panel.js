@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { Route, Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
 import MainMenu from "./MainMenu";
@@ -18,6 +13,8 @@ class Panel extends React.Component {
       user: {},
       showMainMenu: false
     };
+    this.toggle = this.toggle.bind(this);
+    this.hide = this.hide.bind(this);
   }
   componentDidMount() {
     // axios
@@ -28,9 +25,25 @@ class Panel extends React.Component {
     //   .catch(function(error) {
     //     alert(error.message);
     //   });
+
+    window.addEventListener("click", event => this.hide("showMainMenu"));
   }
-  toggle(name, event) {
+  componentWillUnmount() {
+    window.removeEventListener("click", event => this.hide("showMainMenu"));
+  }
+  toggle(name, stopPropagation = false, event) {
+    if (stopPropagation) {
+      event.stopPropagation();
+    }
     const newValue = !this.state[name];
+    let newState = {};
+
+    newState[name] = newValue;
+
+    this.setState(newState);
+  }
+  hide(name, event) {
+    const newValue = false;
     let newState = {};
 
     newState[name] = newValue;
@@ -62,6 +75,7 @@ class Panel extends React.Component {
           <MainMenu
             show={this.state.showMainMenu}
             toggle={this.toggle.bind(this, "showMainMenu")}
+            hide={this.hide.bind(this, "showMainMenu")}
           />
         </div>
         <div id="content">
