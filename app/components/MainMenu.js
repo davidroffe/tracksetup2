@@ -16,7 +16,7 @@ const MainMenu = props => {
             </Link>
           </li>
           <li>
-            <button>
+            <button onClick={props.logOut}>
               <i className="fa fa-power-off" />
               Logout
             </button>

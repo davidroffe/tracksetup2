@@ -15,6 +15,7 @@ class Panel extends React.Component {
     };
     this.toggle = this.toggle.bind(this);
     this.hide = this.hide.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
   componentDidMount() {
     // axios
@@ -26,10 +27,10 @@ class Panel extends React.Component {
     //     alert(error.message);
     //   });
 
-    window.addEventListener("click", event => this.hide("showMainMenu"));
+    window.addEventListener("click", this.hide.bind(this, "showMainMenu"));
   }
   componentWillUnmount() {
-    window.removeEventListener("click", event => this.hide("showMainMenu"));
+    window.removeEventListener("click", this.hide.bind(this, "showMainMenu"));
   }
   toggle(name, stopPropagation = false, event) {
     if (stopPropagation) {
@@ -52,12 +53,8 @@ class Panel extends React.Component {
   }
   logOut() {
     axios
-      .get("/api/logout")
-      .then(function() {
-        setTimeout(function() {
-          this.props.history("/");
-        }, 100);
-      })
+      .post("/api/logout")
+      .then(() => this.props.history.push("/"))
       .catch(function(error) {
         console.log("error is " + error);
       });
@@ -76,6 +73,7 @@ class Panel extends React.Component {
             show={this.state.showMainMenu}
             toggle={this.toggle.bind(this, "showMainMenu")}
             hide={this.hide.bind(this, "showMainMenu")}
+            logOut={this.logOut}
           />
         </div>
         <div id="content">

@@ -55,7 +55,7 @@ class Splash extends React.Component {
         errorMessage
       });
     } else {
-      return axios
+      axios
         .post(url, {
           email: email,
           password: password
