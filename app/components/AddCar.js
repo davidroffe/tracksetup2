@@ -6,19 +6,9 @@ class AddCar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      show: props.show
-    };
+    this.state = {};
 
     this.handleClose = this.handleClose.bind(this);
-  }
-  static getDerivedStateFromProps(props, currentState) {
-    if (currentState.show !== props.show) {
-      return {
-        show: props.show
-      };
-    }
-    return null;
   }
   handleClose(e) {
     if (e) e.preventDefault();
@@ -26,7 +16,7 @@ class AddCar extends React.Component {
   }
   render() {
     return (
-      <Modal show={this.state.show} onHide={this.handleClose}>
+      <Modal show={this.props.show} onHide={this.handleClose}>
         <div className="add cars">
           <div className="form-container">
             <h2>Add New Car</h2>
