@@ -28,6 +28,8 @@ class CarList extends React.Component {
     });
   }
   handleClose(modal, event) {
+    if (event) event.preventDefault();
+
     let object = {};
 
     object[`show${modal}`] = false;

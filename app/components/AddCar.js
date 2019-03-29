@@ -7,16 +7,10 @@ class AddCar extends React.Component {
     super(props);
 
     this.state = {};
-
-    this.handleClose = this.handleClose.bind(this);
-  }
-  handleClose(e) {
-    if (e) e.preventDefault();
-    this.props.handleClose();
   }
   render() {
     return (
-      <Modal show={this.props.show} onHide={this.handleClose}>
+      <Modal show={this.props.show} onHide={this.props.handleClose}>
         <div className="add cars">
           <div className="form-container">
             <h2>Add New Car</h2>
@@ -135,7 +129,7 @@ class AddCar extends React.Component {
                 />
               </div>
               <button onClick={this.handleSubmit}>Add</button>
-              <button className="cancel" onClick={this.handleClose}>
+              <button className="cancel" onClick={this.props.handleClose}>
                 Cancel
               </button>
             </form>
