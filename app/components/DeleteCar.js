@@ -6,27 +6,9 @@ class DeleteCar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      cars: props.cars,
-      show: props.show
-    };
+    this.state = {};
 
     this.handleClose = this.handleClose.bind(this);
-  }
-  static getDerivedStateFromProps(props, currentState) {
-    let newState = {};
-
-    if (currentState.show !== props.show) {
-      newState.show = props.show;
-    }
-    if (currentState.cars.length !== props.cars.length) {
-      newState.cars = props.cars;
-    }
-    if (Object.keys(newState).length === 0) {
-      return null;
-    } else {
-      return newState;
-    }
   }
   handleClose(e) {
     if (e) e.preventDefault();
@@ -34,12 +16,12 @@ class DeleteCar extends React.Component {
   }
   render() {
     return (
-      <Modal show={this.state.show} onHide={this.handleClose}>
+      <Modal show={this.props.show} onHide={this.handleClose}>
         <div className="add cars">
           <div className="form-container">
             <h2>Delete Car</h2>
             <div>
-              {this.state.cars.map((car, index) => {
+              {this.props.cars.map((car, index) => {
                 <div>
                   <p>
                     {car.name}
