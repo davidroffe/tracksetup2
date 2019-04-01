@@ -8,12 +8,13 @@ class AddCar extends React.Component {
 
     this.state = {
       name: "",
-      year: "",
+      year: "2007",
       make: "",
       model: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(fieldName, event) {
     let newState = {};
@@ -21,6 +22,33 @@ class AddCar extends React.Component {
 
     newState[fieldName] = newValue;
     this.setState(newState);
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+
+    let error = [];
+    let { name, year, make, model } = this.state;
+
+    if (name === "" || typeof name === "undefined") error.push("error");
+    if (year === "" || typeof year === "undefined") error.push("error");
+    if (make === "" || typeof make === "undefined") error.push("error");
+    if (model === "" || typeof model === "undefined") error.push("error");
+
+    if (error.length === 0) {
+      let avatar = "/assets/img/car/default/def.png";
+
+      axios
+        .post("/api/car/add", {
+          avatar,
+          name,
+          year,
+          make,
+          model
+        })
+        .then(() => {
+          this.props.updateCarList();
+        });
+    }
   }
   render() {
     return (

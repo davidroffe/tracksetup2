@@ -10,10 +10,11 @@ class DeleteCar extends React.Component {
 
     this.handleClose = this.handleClose.bind(this);
   }
-  handleClose(e) {
-    if (e) e.preventDefault();
+  handleClose(event) {
+    if (event) event.preventDefault();
     this.props.handleClose();
   }
+  deleteCar(event) {}
   render() {
     return (
       <Modal show={this.props.show} onHide={this.handleClose}>
@@ -25,7 +26,7 @@ class DeleteCar extends React.Component {
                 <div>
                   <p>
                     {car.name}
-                    <button onClick={this.deleteCar().bind(this, index)}>
+                    <button onClick={this.deleteCar.bind(this, index)}>
                       <i className="fa fa-trash fa-lg" />
                     </button>
                   </p>

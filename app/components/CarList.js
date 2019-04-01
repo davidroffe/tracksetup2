@@ -16,6 +16,7 @@ class CarList extends React.Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.updateCarList = this.updateCarList.bind(this);
   }
   componentDidMount() {
     this.updateCarList();
@@ -47,15 +48,17 @@ class CarList extends React.Component {
       <div id="cars-view">
         <ul>
           {this.state.cars.map(car => {
-            <li>
-              <Link
-                className="indi-card live-card def-car"
-                to={`panel/car/${car._id}`}
-              >
-                <img src={car.avatar} alt="" />
-                <p>{car.name}</p>
-              </Link>
-            </li>;
+            return (
+              <li key={car._id}>
+                <Link
+                  className="indi-card live-card def-car"
+                  to={`panel/car/${car._id}`}
+                >
+                  <img src={car.avatar} alt="" />
+                  <p>{car.name}</p>
+                </Link>
+              </li>
+            );
           })}
           <li className="modify-card">
             <button
