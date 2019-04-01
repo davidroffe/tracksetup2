@@ -6,7 +6,21 @@ class AddCar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      name: "",
+      year: "",
+      make: "",
+      model: ""
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(fieldName, event) {
+    let newState = {};
+    let newValue = event.target.value;
+
+    newState[fieldName] = newValue;
+    this.setState(newState);
   }
   render() {
     return (
@@ -21,13 +35,17 @@ class AddCar extends React.Component {
                   id="name"
                   type="text"
                   name="name"
-                  onChange={this.handleChange}
+                  onChange={this.handleChange.bind(null, "name")}
                   value={this.state.name}
                 />
               </div>
               <div>
                 <label htmlFor="year">Year</label>
-                <select id="year" name="year">
+                <select
+                  id="year"
+                  name="year"
+                  onBlur={this.handleChange.bind(null, "year")}
+                >
                   <option value="2007">2007</option>
                   <option value="2006">2006</option>
                   <option value="2005">2005</option>
@@ -114,7 +132,7 @@ class AddCar extends React.Component {
                   id="make"
                   type="text"
                   name="make"
-                  onChange={this.handleChange}
+                  onChange={this.handleChange.bind(null, "make")}
                   value={this.state.make}
                 />
               </div>
@@ -124,7 +142,7 @@ class AddCar extends React.Component {
                   id="model"
                   type="text"
                   name="model"
-                  onChange={this.handleChange}
+                  onChange={this.handleChange.bind(null, "model")}
                   value={this.state.model}
                 />
               </div>
