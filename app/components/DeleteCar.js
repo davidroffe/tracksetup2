@@ -18,19 +18,21 @@ class DeleteCar extends React.Component {
   render() {
     return (
       <Modal show={this.props.show} onHide={this.handleClose}>
-        <div className="add cars">
+        <div className="delete cars">
           <div className="form-container">
             <h2>Delete Car</h2>
             <div>
               {this.props.cars.map((car, index) => {
-                <div>
-                  <p>
-                    {car.name}
-                    <button onClick={this.deleteCar.bind(this, index)}>
-                      <i className="fa fa-trash fa-lg" />
-                    </button>
-                  </p>
-                </div>;
+                return (
+                  <div key={car._id} className="car">
+                    <p>
+                      {car.name}
+                      <button onClick={this.deleteCar.bind(this, index)}>
+                        <i className="fa fa-trash fa-lg" />
+                      </button>
+                    </p>
+                  </div>
+                );
               })}
               <button onClick={this.handleClose}>Done</button>
             </div>
