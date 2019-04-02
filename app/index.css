@@ -970,6 +970,7 @@ button.cancel {
   font-size: 14px;
 }
 
+.delete.cars > .form-container,
 .add.cards > .form-container,
 .add.cars > .form-container,
 .add.notes > .form-container {
@@ -979,22 +980,29 @@ button.cancel {
   background: #fff;
 }
 
+.delete h2,
 .add h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: #a8a8a8;
 }
 
+.delete form,
 .add form {
   overflow: hidden;
 }
 
+.delete .form-container,
 .add .form-container {
   overflow: hidden;
 }
 
 .add .form-container div {
   padding: 10px 0;
+}
+
+.delete .form-container div {
+  margin: 20px 0;
 }
 
 .add label,
@@ -1007,6 +1015,7 @@ p.label {
   color: #666;
 }
 
+.delete p,
 .add p {
   display: block;
   font-size: 20px;
@@ -1014,16 +1023,29 @@ p.label {
   color: #666;
 }
 
+.delete p {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete.cars p > i,
 .add.cars p > i {
   color: #ccc;
   float: right;
 }
 
+.delete.cars p > i:hover,
 .add.cars p > i:hover {
   color: #666;
   cursor: pointer;
 }
 
+.delete.cars .form-container > div > div:hover,
 .add.cars .form-container > div > div:hover {
   background: #f7f7f7;
 }
@@ -1056,6 +1078,14 @@ button {
   float: none;
   margin: 10px 0 0;
   background: #ff3a00;
+}
+
+.delete .car {
+  overflow: hidden;
+}
+
+.delete .car button {
+  margin: 0;
 }
 
 #car-avatar-upload {
