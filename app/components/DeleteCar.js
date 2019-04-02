@@ -9,12 +9,21 @@ class DeleteCar extends React.Component {
     this.state = {};
 
     this.handleClose = this.handleClose.bind(this);
+    this.deleteCar = this.deleteCar.bind(this);
   }
   handleClose(event) {
     if (event) event.preventDefault();
     this.props.handleClose();
   }
-  deleteCar(event) {}
+  deleteCar(index, event) {
+    if (confirm("Are you sure you want to delete this car?")) {
+      axios
+        .delete(`/api/car/del/${this.props.cars[index]._id}`)
+        .then(response => {
+          this.props.updateCarList();
+        });
+    }
+  }
   render() {
     return (
       <Modal show={this.props.show} onHide={this.handleClose}>
