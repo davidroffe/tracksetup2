@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import CarList from "./CarList";
+import CarDetail from "./CarDetail";
 import MainMenu from "./MainMenu";
 import Settings from "./Settings";
 
@@ -78,6 +79,7 @@ class Panel extends React.Component {
         </div>
         <div id="content">
           <Route path="/panel/cars" component={CarList} />
+          <Route path="/panel/car/:carId" component={CarDetail} />
           <Route path="/panel/settings" component={Settings} />
           <Route
             exact
