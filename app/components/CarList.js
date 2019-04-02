@@ -52,7 +52,7 @@ class CarList extends React.Component {
               <li key={car._id}>
                 <Link
                   className="indi-card live-card def-car"
-                  to={`panel/car/${car._id}`}
+                  to={`/panel/car/${car._id}`}
                 >
                   <img src={car.avatar} alt="" />
                   <p>{car.name}</p>
