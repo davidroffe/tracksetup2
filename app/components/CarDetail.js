@@ -103,7 +103,7 @@ class CarDetail extends React.Component {
           <div>
             <img src={this.state.car.data.avatar} alt="" />
             <button onClick={this.showEditCar}>
-              <i className="fa fa-pencil fa-2x" />
+              <i className="fa fa-pencil-alt fa-2x" />
             </button>
           </div>
           <h1>{this.state.car.data.name}</h1>

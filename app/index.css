@@ -547,8 +547,10 @@ table {
 }
 
 .car.title {
-  padding: 36px 0;
+  padding: 36px 0 56px;
   background-color: #f4f4f4;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .car.title > div {
@@ -589,13 +591,17 @@ table {
   opacity: 1;
 }
 
+.container.cards.notes {
+  overflow: hidden;
+  transform: translateY(-20px);
+}
+
 #car-cards {
-  margin-top: -20px;
   margin-bottom: 20px;
   padding: 15px;
   background: #fff;
   display: inline-block;
-  width: 800px;
+  width: 750px;
   float: left;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04),
     6px 8px 15px rgba(0, 0, 0, 0.04);
@@ -613,7 +619,6 @@ table {
 #cards-title h1,
 #notes-title h1 {
   width: 100%;
-  margin-left: -85px;
   font-size: 30px;
   text-align: center;
   color: #767676;
@@ -760,11 +765,10 @@ table {
 }
 
 #car-notes {
-  margin-top: -20px;
   margin-bottom: 20px;
   display: block;
   padding: 15px;
-  width: 300px;
+  width: 280px;
   background: #fff;
   float: left;
   margin-left: 50px;
@@ -1058,7 +1062,6 @@ p.label {
 }
 
 button {
-  float: right;
   padding: 14px;
   width: 125px;
   border: none;
