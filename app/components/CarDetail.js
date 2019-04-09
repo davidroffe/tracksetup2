@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AddCard from "./AddCard";
+import AddNote from "./AddNote";
 
 class CarDetail extends React.Component {
   constructor(props) {
@@ -179,7 +180,7 @@ class CarDetail extends React.Component {
                 ) : null}
               </div>
               <div id="add-note">
-                <button onClick={this.state.note.add.open}>
+                <button onClick={this.handleShow.bind(this, "AddNote")}>
                   <i className="fa fa-plus fa-lg" />
                   <span>New Card</span>
                 </button>
@@ -217,7 +218,13 @@ class CarDetail extends React.Component {
           car={this.state.car}
           show={this.state.showAddCard}
           handleClose={this.handleClose.bind(this, "AddCard")}
-          updateCarList={this.updateCarList}
+          updateCarList={this.updateCar}
+        />
+        <AddNote
+          car={this.state.car}
+          show={this.state.showAddNote}
+          handleClose={this.handleClose.bind(this, "AddNote")}
+          updateCarList={this.updateCar}
         />
       </div>
     );
