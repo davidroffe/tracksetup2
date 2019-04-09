@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import AddCard from "./AddCard";
 
 class CarDetail extends React.Component {
   constructor(props) {
@@ -53,8 +54,8 @@ class CarDetail extends React.Component {
         open: function() {},
         titleHeader: ""
       },
-      showAddCar: false,
-      showDeleteCar: false,
+      showAddCard: false,
+      showAddNote: false,
       cars: []
     };
 
@@ -125,7 +126,7 @@ class CarDetail extends React.Component {
                 ) : null}
               </div>
               <div id="add-card">
-                <button onClick={this.state.card.add.open}>
+                <button onClick={this.handleShow.bind(this, "AddCard")}>
                   <i className="fa fa-plus fa-lg" />
                   <span>New Card</span>
                 </button>
@@ -212,6 +213,12 @@ class CarDetail extends React.Component {
             </ul>
           </div>
         </div>
+        <AddCard
+          car={this.state.car}
+          show={this.state.showAddCard}
+          handleClose={this.handleClose.bind(this, "AddCard")}
+          updateCarList={this.updateCarList}
+        />
       </div>
     );
   }
